@@ -2,6 +2,7 @@
 
 A simple data pipeline that extracts weather data from the Open-Meteo API, transforms it, and loads it into a PostgreSQL database using Apache Airflow.
 
+
 ## Project Overview
 
 This project demonstrates an ETL (Extract, Transform, Load) pipeline that:
@@ -10,14 +11,16 @@ This project demonstrates an ETL (Extract, Transform, Load) pipeline that:
 - Loads the processed data into a PostgreSQL database
 - Runs daily using Apache Airflow for orchestration
 
+
 ## Pipeline Architecture
 
-![DAG Workflow](images/dag_workflow.png)
+![DAG Workflow](https://github.com/YashTakte/Weather-ETL-Pipeline/blob/main/Airflow%20(DAG).png)
 
 The pipeline consists of three main tasks that run sequentially:
 1. Extract weather data from API
 2. Transform the data into structured format
 3. Load the data into PostgreSQL database
+
 
 ## Technologies Used
 
@@ -27,12 +30,14 @@ The pipeline consists of three main tasks that run sequentially:
 - Docker - Containerization
 - Astronomer CLI - Local Airflow development environment
 
+
 ## Prerequisites
 
 - Docker Desktop installed and running
 - Astronomer CLI installed
 - Basic knowledge of Python and SQL
 - AWS RDS PostgreSQL instance (optional, for cloud storage)
+
 
 ## Project Structure
 ```
@@ -43,6 +48,7 @@ Weather-ETL-Pipeline/
 ├── Dockerfile                  # Docker configuration
 └── README.md                   # Project documentation
 ```
+
 
 ## Setup Instructions
 
@@ -109,6 +115,7 @@ Login credentials:
 3. Toggle the switch to enable the DAG
 4. Click the play button to trigger a manual run
 
+
 ## DAG Details
 
 ### Tasks
@@ -132,6 +139,7 @@ The `weather_data` table contains:
 - weathercode (INT)
 - timestamp (TIMESTAMP)
 
+
 ## Viewing the Data
 
 ### Option 1: Using psql (Command Line)
@@ -153,6 +161,7 @@ Connect to your PostgreSQL database using:
 - Username: postgres
 - Password: postgres
 
+
 ## Configuration
 
 ### Changing Location
@@ -170,12 +179,14 @@ To modify the schedule, update the `schedule` parameter in the DAG definition:
 schedule = '@daily'  # Options: @hourly, @daily, @weekly, @monthly
 ```
 
+
 ## Stopping the Pipeline
 
 To stop all Airflow services:
 ```bash
 astro dev stop
 ```
+
 
 ## Acknowledgments
 
