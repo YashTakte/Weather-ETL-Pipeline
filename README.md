@@ -10,6 +10,15 @@ This project demonstrates an ETL (Extract, Transform, Load) pipeline that:
 - Loads the processed data into a PostgreSQL database
 - Runs daily using Apache Airflow for orchestration
 
+## Pipeline Architecture
+
+![DAG Workflow](images/dag_workflow.png)
+
+The pipeline consists of three main tasks that run sequentially:
+1. Extract weather data from API
+2. Transform the data into structured format
+3. Load the data into PostgreSQL database
+
 ## Technologies Used
 
 - Apache Airflow - Workflow orchestration
